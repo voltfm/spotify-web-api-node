@@ -849,7 +849,7 @@ SpotifyWebApi.prototype = {
     return WebApiRequest.builder(this.getAccessToken())
       .withPath('/v1/me/albums')
       .withHeaders({ 'Content-Type': 'application/json' })
-      .withBodyParameters(albumIds)
+      .withBodyParameters({ ids: albumIds })
       .build()
       .execute(HttpManager.del, callback);
   },
@@ -864,7 +864,7 @@ SpotifyWebApi.prototype = {
     return WebApiRequest.builder(this.getAccessToken())
       .withPath('/v1/me/albums')
       .withHeaders({ 'Content-Type': 'application/json' })
-      .withBodyParameters(albumIds)
+      .withBodyParameters({ ids: albumIds })
       .build()
       .execute(HttpManager.put, callback);
   },
